@@ -1,4 +1,22 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ajay's Blog</title><description>A minimal hugo theme focus on content</description><link>http://localhost:8000/</link><language>en</language><copyright>Copyright 2026, map[email:aktekam01@gmail.com name:Ajay Tekam]</copyright><lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate><generator>Hugo - gohugo.io</generator><docs>http://cyber.harvard.edu/rss/rss.html</docs><atom:link href="http://localhost:8000//atom.xml" rel="self" type="application/atom+xml"/><item><title>Azure Cloud : Day 01 - Azure global Infrastructure</title><link>http://localhost:8000/posts/azure_cloud_day_01_gloabl_infrastructure/</link><description>&lt;h3 id="azure-regions"&gt;Azure Regions:&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>Ajay&#39;s Blog</title>
+    <description>A minimal hugo theme focus on content</description>
+    <link>http://localhost:1313/</link>
+    
+    <language>en</language>
+    
+    <copyright>Copyright 2026, map[email:aktekam01@gmail.com name:Ajay Tekam]</copyright>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo - gohugo.io</generator>
+    <docs>http://cyber.harvard.edu/rss/rss.html</docs>
+    <atom:link href="http://localhost:1313//atom.xml" rel="self" type="application/atom+xml"/>
+    
+    <item>
+      <title>Azure Cloud : Day 01 - Azure global Infrastructure</title>
+      <link>http://localhost:1313/posts/azure_cloud_day_01_gloabl_infrastructure/</link>
+      <description>&lt;h3 id=&#34;azure-regions&#34;&gt;Azure Regions:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;A set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data.&lt;/li&gt;
 &lt;li&gt;A region contains one or more, often multiple, physically separated datacenters.&lt;/li&gt;
@@ -13,43 +31,44 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="availability-zones"&gt;Availability Zones&lt;/h3&gt;
+&lt;h3 id=&#34;availability-zones&#34;&gt;Availability Zones&lt;/h3&gt;
 &lt;p&gt;Within a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures.&lt;/p&gt;
 &lt;p&gt;&lt;img
-src="http://localhost:8000/images/azure_cloud_day_1_to_20_series/azure_cloud_01_1.png"
-alt="Azure Region"
-loading="lazy"
-decoding="async"
-class="full-width"
+  src=&#34;http://localhost:1313/images/azure_cloud_day_1_to_20_series/azure_cloud_01_1.png&#34;
+  alt=&#34;Azure Region&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
 /&gt;
+
 &lt;/p&gt;
-&lt;h3 id="paired-regions"&gt;Paired Regions&lt;/h3&gt;
+&lt;h3 id=&#34;paired-regions&#34;&gt;Paired Regions&lt;/h3&gt;
 &lt;p&gt;To ensure high availability and disaster recovery, Azure pairs most regions with another region within the same geography (e.g., East US and West US) to provide redundancy. For example:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Primary Region&lt;/th&gt;
-&lt;th&gt;Paired (Secondary) Region&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;East Us&lt;/td&gt;
-&lt;td&gt;West US&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Central India&lt;/td&gt;
-&lt;td&gt;South India&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Noth Europe&lt;/td&gt;
-&lt;td&gt;West Europe&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Benefits:&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Primary Region&lt;/th&gt;
+          &lt;th&gt;Paired (Secondary) Region&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;East Us&lt;/td&gt;
+          &lt;td&gt;West US&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Central India&lt;/td&gt;
+          &lt;td&gt;South India&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Noth Europe&lt;/td&gt;
+          &lt;td&gt;West Europe&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Benefits:&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;ul&gt;
 &lt;li&gt;Data replication&lt;/li&gt;
@@ -57,20 +76,21 @@ class="full-width"
 &lt;li&gt;Disaster recovery planning&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img
-src="http://localhost:8000/images/azure_cloud_day_1_to_20_series/azure_cloud_01_2.png"
-alt="Azure Paired Region"
-loading="lazy"
-decoding="async"
-class="full-width"
+  src=&#34;http://localhost:1313/images/azure_cloud_day_1_to_20_series/azure_cloud_01_2.png&#34;
+  alt=&#34;Azure Paired Region&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
 /&gt;
+
 &lt;/p&gt;
-&lt;h3 id="edge-zones"&gt;Edge Zones&lt;/h3&gt;
+&lt;h3 id=&#34;edge-zones&#34;&gt;Edge Zones&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;An &lt;strong&gt;Edge Zone&lt;/strong&gt; is a &lt;strong&gt;localized extension of an Azure region that brings Azure services closer to users&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;Instead of processing requests in a faraway region, workloads can run &lt;strong&gt;near the edge of the network&lt;/strong&gt;. This reduces the network distance between users and applications.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;User Device --&amp;gt; Edge Zone (Near city) --&amp;gt; Azure Region
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="availability-set-fault-domain-and-update-domain"&gt;Availability Set, Fault Domain and Update Domain&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;User Device --&amp;gt; Edge Zone (Near city) --&amp;gt; Azure Region
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;availability-set-fault-domain-and-update-domain&#34;&gt;Availability Set, Fault Domain and Update Domain&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The servers in a datacenter are divided into multiple physical and logical groups. The physical grouping is called fault domain and the logical grouping is called update domain.&lt;/li&gt;
 &lt;li&gt;̌You can think of each rack of servers with it&amp;rsquo;s own power supply and network switch as one fault domain. So, if there are 10 racks of server in a datacenter, it&amp;rsquo;s like you have 10 different fault domains.&lt;/li&gt;
@@ -78,16 +98,17 @@ class="full-width"
 &lt;li&gt;An availability set is a concept with in a datacenter and it is made up of multiple fault domains and update domains.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img
-src="http://localhost:8000/images/azure_cloud_day_1_to_20_series/azure_cloud_01_3.jpg"
-alt="Azure Availability Set"
-loading="lazy"
-decoding="async"
-class="full-width"
+  src=&#34;http://localhost:1313/images/azure_cloud_day_1_to_20_series/azure_cloud_01_3.jpg&#34;
+  alt=&#34;Azure Availability Set&#34;
+  loading=&#34;lazy&#34;
+  decoding=&#34;async&#34;
+  class=&#34;full-width&#34;
 /&gt;
+
 &lt;/p&gt;
-&lt;h3 id="azure-sla-model"&gt;Azure SLA Model&lt;/h3&gt;
+&lt;h3 id=&#34;azure-sla-model&#34;&gt;Azure SLA Model&lt;/h3&gt;
 &lt;p&gt;Microsoft Azure SLA (Service Level Agreement) defines the guaranteed uptime and availability of a service. Azure provides different SLA models based on how you deploy resources. Below are the main Azure SLA models used in real architectures.&lt;/p&gt;
-&lt;h4 id="1-single-instance-sla"&gt;1. Single instance SLA&lt;/h4&gt;
+&lt;h4 id=&#34;1-single-instance-sla&#34;&gt;1. Single instance SLA&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;This is the lowest availability model.&lt;/li&gt;
 &lt;li&gt;A single VM or service instance&lt;/li&gt;
@@ -95,21 +116,27 @@ class="full-width"
 &lt;li&gt;If the instance fails → application goes down&lt;/li&gt;
 &lt;li&gt;Example :&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;1 VM
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1 VM
 1 Availability zone
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;SLA is around 99.9 % uptime.&lt;/li&gt;
 &lt;li&gt;Architecture&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;div class=&#34;mermaid&#34;&gt;
+  
 flowchart TD
+
 A[User] --&gt; B[Single VM]
+
 &lt;/div&gt;
-&lt;script type="module"&gt;
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true });
+
+&lt;script type=&#34;module&#34;&gt;
+  import mermaid from &#39;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs&#39;;
+  mermaid.initialize({ startOnLoad: true });
 &lt;/script&gt;
-&lt;h4 id="2-availability-set-sla"&gt;2. Availability Set SLA&lt;/h4&gt;
+
+
+&lt;h4 id=&#34;2-availability-set-sla&#34;&gt;2. Availability Set SLA&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;An Availability Set spreads VMs across different fault and update domains.&lt;/li&gt;
 &lt;li&gt;Azure ensures VMs are distributed across:
@@ -120,61 +147,84 @@ mermaid.initialize({ startOnLoad: true });
 &lt;/li&gt;
 &lt;li&gt;Example&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;VM1 --&amp;gt; Fault Doamin 1
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VM1 --&amp;gt; Fault Doamin 1
 VM2 --&amp;gt; Fault Doamin 2
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;Typical SLA is 99.95 % uptime&lt;/li&gt;
 &lt;li&gt;Architecture&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;div class=&#34;mermaid&#34;&gt;
+  
 flowchart TD
 A[Load Balancer] --&gt;|FD1/UD1| B(VM1)
 A --&gt; |FD2/UD2| C(VM2)
+
 &lt;/div&gt;
-&lt;script type="module"&gt;
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true });
+
+&lt;script type=&#34;module&#34;&gt;
+  import mermaid from &#39;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs&#39;;
+  mermaid.initialize({ startOnLoad: true });
 &lt;/script&gt;
-&lt;h4 id="3-availability-zones-sla"&gt;3. Availability Zones SLA&lt;/h4&gt;
+
+
+&lt;h4 id=&#34;3-availability-zones-sla&#34;&gt;3. Availability Zones SLA&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Availability Zones are physically separate datacenters inside a region.&lt;/li&gt;
 &lt;li&gt;Example&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;VM in Zone 1
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VM in Zone 1
 VM in Zone 2
 VM in Zone 3
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;Typical SLA is 99.99 % uptime.&lt;/li&gt;
 &lt;li&gt;Architecture&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;div class=&#34;mermaid&#34;&gt;
+  
 flowchart TD
 A[Load Balancer] --&gt;|Zone 1| B(VM)
 A --&gt; |Zone 2| C(VM)
 A --&gt; |Zone 3| D(VM)
+
 &lt;/div&gt;
-&lt;script type="module"&gt;
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true });
+
+&lt;script type=&#34;module&#34;&gt;
+  import mermaid from &#39;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs&#39;;
+  mermaid.initialize({ startOnLoad: true });
 &lt;/script&gt;
-&lt;h4 id="4-multi-region-sla"&gt;4. Multi-Region SLA&lt;/h4&gt;
+
+
+&lt;h4 id=&#34;4-multi-region-sla&#34;&gt;4. Multi-Region SLA&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;This is the highest availability model.&lt;/li&gt;
 &lt;li&gt;Applications run in multiple Azure regions.&lt;/li&gt;
 &lt;li&gt;Example&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;Primary: East US
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Primary: East US
 Secondary: West Europe
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;Typical SLA is 99.999 % uptime.&lt;/li&gt;
 &lt;li&gt;Architecture&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;div class=&#34;mermaid&#34;&gt;
+  
 flowchart TD
 A[Global Load Balancer] --&gt;|Region A| B(Primary)
 A --&gt; |Region B| C(Disaster Recovery)
+
 &lt;/div&gt;
-&lt;script type="module"&gt;
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true });
-&lt;/script&gt;</description><author>map[email:aktekam01@gmail.com name:Ajay Tekam]</author><guid>http://localhost:8000/posts/azure_cloud_day_01_gloabl_infrastructure/</guid><pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate></item></channel></rss>
+
+&lt;script type=&#34;module&#34;&gt;
+  import mermaid from &#39;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs&#39;;
+  mermaid.initialize({ startOnLoad: true });
+&lt;/script&gt;
+
+
+</description>
+      <author>map[email:aktekam01@gmail.com name:Ajay Tekam]</author>
+      <guid>http://localhost:1313/posts/azure_cloud_day_01_gloabl_infrastructure/</guid>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,38 +1,384 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="Liste - http://localhost:8000/"><title>Azure Cloud : Day 01 - Azure global Infrastructure | Ajay's Blog</title><meta name=description content="A minimal hugo theme focus on content"><meta property="og:url" content="http://localhost:8000/posts/azure_cloud_day_01_gloabl_infrastructure/"><meta property="og:site_name" content="Ajay's Blog"><meta property="og:title" content="Azure Cloud : Day 01 - Azure global Infrastructure"><meta property="og:description" content="Azure Regions: A set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data. A region contains one or more, often multiple, physically separated datacenters. Regions are connected by a dedicated, high-capacity, low-latency network. Azure has 70+ regions. globally as of 2026. Common azure region examples: America: East US, West US, Central US, Brazil South, Canada Central, Mexico Central. Europe: North Europe, West Europe, Germany West Central, France Central, UK South, Sweden Central. Asia Pacific: East Asia, Southeast Asia, Japan East, Korea Central, Australia East, Central India, Malaysia West. Middle East & Africa: UAE North, Qatar Central, South Africa North. Availability Zones Within a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-03-15T00:00:00+00:00"><meta property="article:modified_time" content="2026-03-15T00:00:00+00:00"><meta itemprop=name content="Azure Cloud : Day 01 - Azure global Infrastructure"><meta itemprop=description content="Azure Regions: A set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data. A region contains one or more, often multiple, physically separated datacenters. Regions are connected by a dedicated, high-capacity, low-latency network. Azure has 70+ regions. globally as of 2026. Common azure region examples: America: East US, West US, Central US, Brazil South, Canada Central, Mexico Central. Europe: North Europe, West Europe, Germany West Central, France Central, UK South, Sweden Central. Asia Pacific: East Asia, Southeast Asia, Japan East, Korea Central, Australia East, Central India, Malaysia West. Middle East & Africa: UAE North, Qatar Central, South Africa North. Availability Zones Within a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures."><meta itemprop=datePublished content="2026-03-15T00:00:00+00:00"><meta itemprop=dateModified content="2026-03-15T00:00:00+00:00"><meta itemprop=wordCount content="653"><meta itemprop=keywords content="Azure,Cloud"><link rel=canonical href=http://localhost:8000/posts/azure_cloud_day_01_gloabl_infrastructure/><link rel=icon href=http://localhost:8000//assets/favicon.ico><link rel=dns-prefetch href=https://www.google-analytics.com><link href=https://www.google-analytics.com rel=preconnect crossorigin><link rel=alternate type=application/atom+xml title="Ajay's Blog" href=http://localhost:8000//atom.xml><link rel=alternate type=application/json title="Ajay's Blog" href=http://localhost:8000//feed.json><link rel="shortcut icon" type=image/png href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque"><style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{display:flex;justify-content:space-between;align-items:center;position:relative;padding-bottom:1rem}header .burger{display:none;background:0 0;border:none;padding:0;cursor:pointer}header .burger span{display:block;width:25px;height:3px;background:#000;margin:5px 0;transition:all .3s ease}@media(max-width:768px){header .burger{display:block;z-index:2}header .nav-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:#fffdfa;padding:2rem;transition:.3s ease;z-index:1}header .nav-menu.active{right:0}header .nav-menu ul{flex-direction:column;align-items:center;width:100%}header .nav-menu ul li{display:block;font-size:1.2rem;border-bottom:1px dotted #000;height:50px;display:flex;justify-content:center;align-items:center}header.menu-open .burger span:first-child{transform:rotate(45deg)translate(5px,6px)}header.menu-open .burger span:nth-child(2){opacity:0}header.menu-open .burger span:last-child{transform:rotate(-45deg)translate(5px,-6px)}}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}</style><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"posts","name":"Azure Cloud : Day 01 - Azure global Infrastructure","headline":"Azure Cloud : Day 01 - Azure global Infrastructure","alternativeHeadline":"","description":"\u003ch3 id=\u0022azure-regions\u0022\u003eAzure Regions:\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003eA set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data.\u003c\/li\u003e\n\u003cli\u003eA region contains one or more, often multiple, physically separated datacenters.\u003c\/li\u003e\n\u003cli\u003eRegions are connected by a dedicated, high-capacity, low-latency network.\u003c\/li\u003e\n\u003cli\u003eAzure has 70\u002b regions. globally as of 2026.\u003c\/li\u003e\n\u003cli\u003eCommon azure region examples:\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eAmerica:\u003c\/strong\u003e East US, West US, Central US, Brazil South, Canada Central, Mexico Central.\u003c\/li\u003e\n\u003cli\u003e\u003cstrong\u003eEurope:\u003c\/strong\u003e North Europe, West Europe, Germany West Central, France Central, UK South, Sweden Central.\u003c\/li\u003e\n\u003cli\u003e\u003cstrong\u003eAsia Pacific:\u003c\/strong\u003e East Asia, Southeast Asia, Japan East, Korea Central, Australia East, Central India, Malaysia West.\u003c\/li\u003e\n\u003cli\u003e\u003cstrong\u003eMiddle East \u0026amp; Africa:\u003c\/strong\u003e UAE North, Qatar Central, South Africa North.\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch3 id=\u0022availability-zones\u0022\u003eAvailability Zones\u003c\/h3\u003e\n\u003cp\u003eWithin a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures.\u003c\/p\u003e","inLanguage":"en-us","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/localhost:8000\/posts\/azure_cloud_day_01_gloabl_infrastructure\/"},"author":{"@type":"Person","name":"Ajay Tekam"},"creator":{"@type":"Person","name":"Ajay Tekam"},"accountablePerson":{"@type":"Person","name":"Ajay Tekam"},"copyrightHolder":"Ajay\u0027s Blog","copyrightYear":"2026","dateCreated":"2026-03-15T00:00:00.00Z","datePublished":"2026-03-15T00:00:00.00Z","dateModified":"2026-03-15T00:00:00.00Z","publisher":{"@type":"Organization","name":"Ajay's Blog","url":"http://localhost:8000/","logo":{"@type":"ImageObject","url":"http:\/\/localhost:8000\/assets\/favicon.ico","width":"32","height":"32"}},"image":"http://localhost:8000/assets/favicon.ico","url":"http:\/\/localhost:8000\/posts\/azure_cloud_day_01_gloabl_infrastructure\/","wordCount":"653","genre":[],"keywords":[]}</script><script>document.addEventListener("DOMContentLoaded",()=>{const n=document.querySelector(".burger"),e=document.querySelector(".nav-menu"),t=document.querySelector("header");n&&(n.addEventListener("click",()=>{e.classList.toggle("active"),t.classList.toggle("menu-open")}),document.addEventListener("click",n=>{!t.contains(n.target)&&e.classList.contains("active")&&(e.classList.remove("active"),t.classList.remove("menu-open"))}))})</script><script type=module>
+<!doctype html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liste - http://localhost:1313/">
+    <title>Azure Cloud : Day 01 - Azure global Infrastructure | Ajay&#39;s Blog</title>
+    <meta name="description" content="A minimal hugo theme focus on content">
+    <meta property="og:url" content="http://localhost:1313/posts/azure_cloud_day_01_gloabl_infrastructure/">
+  <meta property="og:site_name" content="Ajay&#39;s Blog">
+  <meta property="og:title" content="Azure Cloud : Day 01 - Azure global Infrastructure">
+  <meta property="og:description" content="Azure Regions: A set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data. A region contains one or more, often multiple, physically separated datacenters. Regions are connected by a dedicated, high-capacity, low-latency network. Azure has 70&#43; regions. globally as of 2026. Common azure region examples: America: East US, West US, Central US, Brazil South, Canada Central, Mexico Central. Europe: North Europe, West Europe, Germany West Central, France Central, UK South, Sweden Central. Asia Pacific: East Asia, Southeast Asia, Japan East, Korea Central, Australia East, Central India, Malaysia West. Middle East &amp; Africa: UAE North, Qatar Central, South Africa North. Availability Zones Within a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-15T00:00:00+00:00">
+
+    
+  <meta itemprop="name" content="Azure Cloud : Day 01 - Azure global Infrastructure">
+  <meta itemprop="description" content="Azure Regions: A set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data. A region contains one or more, often multiple, physically separated datacenters. Regions are connected by a dedicated, high-capacity, low-latency network. Azure has 70&#43; regions. globally as of 2026. Common azure region examples: America: East US, West US, Central US, Brazil South, Canada Central, Mexico Central. Europe: North Europe, West Europe, Germany West Central, France Central, UK South, Sweden Central. Asia Pacific: East Asia, Southeast Asia, Japan East, Korea Central, Australia East, Central India, Malaysia West. Middle East &amp; Africa: UAE North, Qatar Central, South Africa North. Availability Zones Within a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures.">
+  <meta itemprop="datePublished" content="2026-03-15T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-03-15T00:00:00+00:00">
+  <meta itemprop="wordCount" content="653">
+  <meta itemprop="keywords" content="Azure,Cloud">
+    
+    <link rel="canonical" href="http://localhost:1313/posts/azure_cloud_day_01_gloabl_infrastructure/">
+    <link rel="icon" href="http://localhost:1313//assets/favicon.ico">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <link rel="alternate" type="application/atom+xml" title="Ajay&#39;s Blog" href="http://localhost:1313//atom.xml" />
+    <link rel="alternate" type="application/json" title="Ajay&#39;s Blog" href="http://localhost:1313//feed.json" />
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
+    
+    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{display:flex;justify-content:space-between;align-items:center;position:relative;padding-bottom:1rem}header .burger{display:none;background:0 0;border:none;padding:0;cursor:pointer}header .burger span{display:block;width:25px;height:3px;background:#000;margin:5px 0;transition:all .3s ease}@media(max-width:768px){header .burger{display:block;z-index:2}header .nav-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:#fffdfa;padding:2rem;transition:.3s ease;z-index:1}header .nav-menu.active{right:0}header .nav-menu ul{flex-direction:column;align-items:center;width:100%}header .nav-menu ul li{display:block;font-size:1.2rem;border-bottom:1px dotted #000;height:50px;display:flex;justify-content:center;align-items:center}header.menu-open .burger span:first-child{transform:rotate(45deg)translate(5px,6px)}header.menu-open .burger span:nth-child(2){opacity:0}header.menu-open .burger span:last-child{transform:rotate(-45deg)translate(5px,-6px)}}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}</style>
+  
+    
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Azure Cloud : Day 01 - Azure global Infrastructure",
+        "headline": "Azure Cloud : Day 01 - Azure global Infrastructure",
+        "alternativeHeadline": "",
+        "description": "\u003ch3 id=\u0022azure-regions\u0022\u003eAzure Regions:\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003eA set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data.\u003c\/li\u003e\n\u003cli\u003eA region contains one or more, often multiple, physically separated datacenters.\u003c\/li\u003e\n\u003cli\u003eRegions are connected by a dedicated, high-capacity, low-latency network.\u003c\/li\u003e\n\u003cli\u003eAzure has 70\u002b regions. globally as of 2026.\u003c\/li\u003e\n\u003cli\u003eCommon azure region examples:\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eAmerica:\u003c\/strong\u003e East US, West US, Central US, Brazil South, Canada Central, Mexico Central.\u003c\/li\u003e\n\u003cli\u003e\u003cstrong\u003eEurope:\u003c\/strong\u003e North Europe, West Europe, Germany West Central, France Central, UK South, Sweden Central.\u003c\/li\u003e\n\u003cli\u003e\u003cstrong\u003eAsia Pacific:\u003c\/strong\u003e East Asia, Southeast Asia, Japan East, Korea Central, Australia East, Central India, Malaysia West.\u003c\/li\u003e\n\u003cli\u003e\u003cstrong\u003eMiddle East \u0026amp; Africa:\u003c\/strong\u003e UAE North, Qatar Central, South Africa North.\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch3 id=\u0022availability-zones\u0022\u003eAvailability Zones\u003c\/h3\u003e\n\u003cp\u003eWithin a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures.\u003c\/p\u003e",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/azure_cloud_day_01_gloabl_infrastructure\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ajay Tekam"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ajay Tekam"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ajay Tekam"
+        },
+        "copyrightHolder" : "Ajay\u0027s Blog",
+        "copyrightYear" : "2026",
+        "dateCreated": "2026-03-15T00:00:00.00Z",
+        "datePublished": "2026-03-15T00:00:00.00Z",
+        "dateModified": "2026-03-15T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ajay's Blog",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/assets\/favicon.ico",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": "http://localhost:1313/assets/favicon.ico",
+        "url" : "http:\/\/localhost:1313\/posts\/azure_cloud_day_01_gloabl_infrastructure\/",
+        "wordCount" : "653",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+    </script>
+     
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-menu');
+            const header = document.querySelector('header');
+        
+            if (burger) {
+                burger.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                    header.classList.toggle('menu-open');
+                });
+        
+                
+                document.addEventListener('click', (e) => {
+                    if (!header.contains(e.target) && nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        header.classList.remove('menu-open');
+                    }
+                });
+            }
+        });
+    </script> 
+
+    <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
       mermaid.initialize({ startOnLoad: true });
-    </script></head><body><a class=skip-link href=#main>Skip to main</a><main id=main><div class=content><header><p style=padding:0;margin:0><a href=http://localhost:8000/><b>Ajay's Blog</b>
-<span class="text-stone-500 animate-blink">▮</span></a></p><button class=burger aria-label="Toggle menu">
-<span></span>
-<span></span>
-<span></span></button><nav class=nav-menu><ul style=padding:0;margin:0><li><a href=/><span>Home</span></a></li><li><a href=/posts/><span>Posts</span></a></li><li><a href=/courses/><span>Courses</span></a></li><li><a href=/hire-me/><span>Hire Me</span></a></li><li><a href=/categories/><span>Categories</span></a></li></ul></nav></header><hr class=hr-list style=padding:0;margin:0><section><h2 class=post>Azure Cloud : Day 01 - Azure global Infrastructure</h2><h3 id=azure-regions>Azure Regions:</h3><ul><li>A set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data.</li><li>A region contains one or more, often multiple, physically separated datacenters.</li><li>Regions are connected by a dedicated, high-capacity, low-latency network.</li><li>Azure has 70+ regions. globally as of 2026.</li><li>Common azure region examples:<ul><li><strong>America:</strong> East US, West US, Central US, Brazil South, Canada Central, Mexico Central.</li><li><strong>Europe:</strong> North Europe, West Europe, Germany West Central, France Central, UK South, Sweden Central.</li><li><strong>Asia Pacific:</strong> East Asia, Southeast Asia, Japan East, Korea Central, Australia East, Central India, Malaysia West.</li><li><strong>Middle East & Africa:</strong> UAE North, Qatar Central, South Africa North.</li></ul></li></ul><h3 id=availability-zones>Availability Zones</h3><p>Within a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures.</p><p><img src=/images/azure_cloud_day_1_to_20_series/azure_cloud_01_1.png alt="Azure Region" loading=lazy decoding=async class=full-width></p><h3 id=paired-regions>Paired Regions</h3><p>To ensure high availability and disaster recovery, Azure pairs most regions with another region within the same geography (e.g., East US and West US) to provide redundancy. For example:</p><table><thead><tr><th>Primary Region</th><th>Paired (Secondary) Region</th></tr></thead><tbody><tr><td>East Us</td><td>West US</td></tr><tr><td>Central India</td><td>South India</td></tr><tr><td>Noth Europe</td><td>West Europe</td></tr><tr><td>Benefits:</td><td></td></tr></tbody></table><ul><li>Data replication</li><li>Updates rolled out one region at a time</li><li>Disaster recovery planning</li></ul><p><img src=/images/azure_cloud_day_1_to_20_series/azure_cloud_01_2.png alt="Azure Paired Region" loading=lazy decoding=async class=full-width></p><h3 id=edge-zones>Edge Zones</h3><ul><li>An <strong>Edge Zone</strong> is a <strong>localized extension of an Azure region that brings Azure services closer to users</strong>.</li><li>Instead of processing requests in a faraway region, workloads can run <strong>near the edge of the network</strong>. This reduces the network distance between users and applications.</li></ul><pre tabindex=0><code>User Device --&gt; Edge Zone (Near city) --&gt; Azure Region
-</code></pre><h3 id=availability-set-fault-domain-and-update-domain>Availability Set, Fault Domain and Update Domain</h3><ul><li>The servers in a datacenter are divided into multiple physical and logical groups. The physical grouping is called fault domain and the logical grouping is called update domain.</li><li>̌You can think of each rack of servers with it&rsquo;s own power supply and network switch as one fault domain. So, if there are 10 racks of server in a datacenter, it&rsquo;s like you have 10 different fault domains.</li><li>An update domain is a group of servers that can be updated and rebooted at the same time. from time to time, server patches and software updates need to be applied. Some updates require servers to be rebooted.  Only one update domain is rebooted at a time. A rebooted update domain is then given 30 minutes to recover before maintenance is initiated on a different update domain.</li><li>An availability set is a concept with in a datacenter and it is made up of multiple fault domains and update domains.</li></ul><p><img src=/images/azure_cloud_day_1_to_20_series/azure_cloud_01_3.jpg alt="Azure Availability Set" loading=lazy decoding=async class=full-width></p><h3 id=azure-sla-model>Azure SLA Model</h3><p>Microsoft Azure SLA (Service Level Agreement) defines the guaranteed uptime and availability of a service. Azure provides different SLA models based on how you deploy resources. Below are the main Azure SLA models used in real architectures.</p><h4 id=1-single-instance-sla>1. Single instance SLA</h4><ul><li>This is the lowest availability model.</li><li>A single VM or service instance</li><li>No redundancy</li><li>If the instance fails → application goes down</li><li>Example :</li></ul><pre tabindex=0><code>1 VM
+    </script>
+
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    
+<header>
+  <p style="padding: 0;margin: 0;">
+    <a href="http://localhost:1313/">
+      <b>Ajay&#39;s Blog</b>
+      <span class="text-stone-500 animate-blink">▮</span>
+    </a>
+  </p>
+
+  
+  <button class="burger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="nav-menu">
+    <ul style="padding: 0;margin: 0;">
+      
+      
+        <li class="">
+          <a href="/"><span>Home</span></a>
+        </li>
+      
+        <li class="">
+          <a href="/posts/"><span>Posts</span></a>
+        </li>
+      
+        <li class="">
+          <a href="/categories/"><span>Categories</span></a>
+        </li>
+      
+    </ul>
+  </nav>
+  
+</header>
+<hr class="hr-list" style="padding: 0;margin: 0;">
+    <section>
+      <h2 class="post">Azure Cloud : Day 01 - Azure global Infrastructure</h2>
+      <h3 id="azure-regions">Azure Regions:</h3>
+<ul>
+<li>A set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data.</li>
+<li>A region contains one or more, often multiple, physically separated datacenters.</li>
+<li>Regions are connected by a dedicated, high-capacity, low-latency network.</li>
+<li>Azure has 70+ regions. globally as of 2026.</li>
+<li>Common azure region examples:
+<ul>
+<li><strong>America:</strong> East US, West US, Central US, Brazil South, Canada Central, Mexico Central.</li>
+<li><strong>Europe:</strong> North Europe, West Europe, Germany West Central, France Central, UK South, Sweden Central.</li>
+<li><strong>Asia Pacific:</strong> East Asia, Southeast Asia, Japan East, Korea Central, Australia East, Central India, Malaysia West.</li>
+<li><strong>Middle East &amp; Africa:</strong> UAE North, Qatar Central, South Africa North.</li>
+</ul>
+</li>
+</ul>
+<h3 id="availability-zones">Availability Zones</h3>
+<p>Within a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures.</p>
+<p><img
+  src="/images/azure_cloud_day_1_to_20_series/azure_cloud_01_1.png"
+  alt="Azure Region"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<h3 id="paired-regions">Paired Regions</h3>
+<p>To ensure high availability and disaster recovery, Azure pairs most regions with another region within the same geography (e.g., East US and West US) to provide redundancy. For example:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Primary Region</th>
+          <th>Paired (Secondary) Region</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>East Us</td>
+          <td>West US</td>
+      </tr>
+      <tr>
+          <td>Central India</td>
+          <td>South India</td>
+      </tr>
+      <tr>
+          <td>Noth Europe</td>
+          <td>West Europe</td>
+      </tr>
+      <tr>
+          <td>Benefits:</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>Data replication</li>
+<li>Updates rolled out one region at a time</li>
+<li>Disaster recovery planning</li>
+</ul>
+<p><img
+  src="/images/azure_cloud_day_1_to_20_series/azure_cloud_01_2.png"
+  alt="Azure Paired Region"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<h3 id="edge-zones">Edge Zones</h3>
+<ul>
+<li>An <strong>Edge Zone</strong> is a <strong>localized extension of an Azure region that brings Azure services closer to users</strong>.</li>
+<li>Instead of processing requests in a faraway region, workloads can run <strong>near the edge of the network</strong>. This reduces the network distance between users and applications.</li>
+</ul>
+<pre tabindex="0"><code>User Device --&gt; Edge Zone (Near city) --&gt; Azure Region
+</code></pre><h3 id="availability-set-fault-domain-and-update-domain">Availability Set, Fault Domain and Update Domain</h3>
+<ul>
+<li>The servers in a datacenter are divided into multiple physical and logical groups. The physical grouping is called fault domain and the logical grouping is called update domain.</li>
+<li>̌You can think of each rack of servers with it&rsquo;s own power supply and network switch as one fault domain. So, if there are 10 racks of server in a datacenter, it&rsquo;s like you have 10 different fault domains.</li>
+<li>An update domain is a group of servers that can be updated and rebooted at the same time. from time to time, server patches and software updates need to be applied. Some updates require servers to be rebooted.  Only one update domain is rebooted at a time. A rebooted update domain is then given 30 minutes to recover before maintenance is initiated on a different update domain.</li>
+<li>An availability set is a concept with in a datacenter and it is made up of multiple fault domains and update domains.</li>
+</ul>
+<p><img
+  src="/images/azure_cloud_day_1_to_20_series/azure_cloud_01_3.jpg"
+  alt="Azure Availability Set"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<h3 id="azure-sla-model">Azure SLA Model</h3>
+<p>Microsoft Azure SLA (Service Level Agreement) defines the guaranteed uptime and availability of a service. Azure provides different SLA models based on how you deploy resources. Below are the main Azure SLA models used in real architectures.</p>
+<h4 id="1-single-instance-sla">1. Single instance SLA</h4>
+<ul>
+<li>This is the lowest availability model.</li>
+<li>A single VM or service instance</li>
+<li>No redundancy</li>
+<li>If the instance fails → application goes down</li>
+<li>Example :</li>
+</ul>
+<pre tabindex="0"><code>1 VM
 1 Availability zone
-</code></pre><ul><li>SLA is around 99.9 % uptime.</li><li>Architecture</li></ul><div class=mermaid>flowchart TD
-A[User] --> B[Single VM]</div><script type=module>
+</code></pre><ul>
+<li>SLA is around 99.9 % uptime.</li>
+<li>Architecture</li>
+</ul>
+<div class="mermaid">
+  
+flowchart TD
+
+A[User] --> B[Single VM]
+
+</div>
+
+<script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
-</script><h4 id=2-availability-set-sla>2. Availability Set SLA</h4><ul><li>An Availability Set spreads VMs across different fault and update domains.</li><li>Azure ensures VMs are distributed across:<ul><li><strong>Fault Domains (FD)</strong> → Different physical racks</li><li><strong>Update Domains (UD)</strong> → Different maintenance groups</li></ul></li><li>Example</li></ul><pre tabindex=0><code>VM1 --&gt; Fault Doamin 1
+</script>
+
+
+<h4 id="2-availability-set-sla">2. Availability Set SLA</h4>
+<ul>
+<li>An Availability Set spreads VMs across different fault and update domains.</li>
+<li>Azure ensures VMs are distributed across:
+<ul>
+<li><strong>Fault Domains (FD)</strong> → Different physical racks</li>
+<li><strong>Update Domains (UD)</strong> → Different maintenance groups</li>
+</ul>
+</li>
+<li>Example</li>
+</ul>
+<pre tabindex="0"><code>VM1 --&gt; Fault Doamin 1
 VM2 --&gt; Fault Doamin 2
-</code></pre><ul><li>Typical SLA is 99.95 % uptime</li><li>Architecture</li></ul><div class=mermaid>flowchart TD
+</code></pre><ul>
+<li>Typical SLA is 99.95 % uptime</li>
+<li>Architecture</li>
+</ul>
+<div class="mermaid">
+  
+flowchart TD
 A[Load Balancer] -->|FD1/UD1| B(VM1)
-A --> |FD2/UD2| C(VM2)</div><script type=module>
+A --> |FD2/UD2| C(VM2)
+
+</div>
+
+<script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
-</script><h4 id=3-availability-zones-sla>3. Availability Zones SLA</h4><ul><li>Availability Zones are physically separate datacenters inside a region.</li><li>Example</li></ul><pre tabindex=0><code>VM in Zone 1
+</script>
+
+
+<h4 id="3-availability-zones-sla">3. Availability Zones SLA</h4>
+<ul>
+<li>Availability Zones are physically separate datacenters inside a region.</li>
+<li>Example</li>
+</ul>
+<pre tabindex="0"><code>VM in Zone 1
 VM in Zone 2
 VM in Zone 3
-</code></pre><ul><li>Typical SLA is 99.99 % uptime.</li><li>Architecture</li></ul><div class=mermaid>flowchart TD
+</code></pre><ul>
+<li>Typical SLA is 99.99 % uptime.</li>
+<li>Architecture</li>
+</ul>
+<div class="mermaid">
+  
+flowchart TD
 A[Load Balancer] -->|Zone 1| B(VM)
 A --> |Zone 2| C(VM)
-A --> |Zone 3| D(VM)</div><script type=module>
+A --> |Zone 3| D(VM)
+
+</div>
+
+<script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
-</script><h4 id=4-multi-region-sla>4. Multi-Region SLA</h4><ul><li>This is the highest availability model.</li><li>Applications run in multiple Azure regions.</li><li>Example</li></ul><pre tabindex=0><code>Primary: East US
+</script>
+
+
+<h4 id="4-multi-region-sla">4. Multi-Region SLA</h4>
+<ul>
+<li>This is the highest availability model.</li>
+<li>Applications run in multiple Azure regions.</li>
+<li>Example</li>
+</ul>
+<pre tabindex="0"><code>Primary: East US
 Secondary: West Europe
-</code></pre><ul><li>Typical SLA is 99.999 % uptime.</li><li>Architecture</li></ul><div class=mermaid>flowchart TD
+</code></pre><ul>
+<li>Typical SLA is 99.999 % uptime.</li>
+<li>Architecture</li>
+</ul>
+<div class="mermaid">
+  
+flowchart TD
 A[Global Load Balancer] -->|Region A| B(Primary)
-A --> |Region B| C(Disaster Recovery)</div><script type=module>
+A --> |Region B| C(Disaster Recovery)
+
+</div>
+
+<script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
-</script><div class=post-date><span class="g time">March 15, 2026 </span>&#8729;</div></section></div></main></body></html>
+</script>
+
+
+
+      
+      <div class="post-date">
+        <span class="g time">March 15, 2026 </span> &#8729;
+         
+      </div>
+      
+    </section>
+    
+    
+    
+  </div>
+</main>
+</body>
+</html>
