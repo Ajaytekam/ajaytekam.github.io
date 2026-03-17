@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloud on Ajay's Blog</title><link>http://localhost:8000/categories/cloud/</link><description>Recent content in Cloud on Ajay's Blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>aktekam01@gmail.com (Ajay Tekam)</managingEditor><webMaster>aktekam01@gmail.com (Ajay Tekam)</webMaster><lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:8000/categories/cloud/atom.xml" rel="self" type="application/rss+xml"/><item><title>Azure Cloud : Day 01 - Azure global Infrastructure</title><link>http://localhost:8000/posts/azure_cloud_day_01_gloabl_infrastructure/</link><pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate><author>aktekam01@gmail.com (Ajay Tekam)</author><guid>http://localhost:8000/posts/azure_cloud_day_01_gloabl_infrastructure/</guid><description>&lt;h3 id="azure-regions"&gt;Azure Regions:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A set of data-centers deployed within a defined, low-latency perimeter, providing global, high-availability infrastructure for hosting applications and data.&lt;/li&gt;
+&lt;li&gt;A region contains one or more, often multiple, physically separated datacenters.&lt;/li&gt;
+&lt;li&gt;Regions are connected by a dedicated, high-capacity, low-latency network.&lt;/li&gt;
+&lt;li&gt;Azure has 70+ regions. globally as of 2026.&lt;/li&gt;
+&lt;li&gt;Common azure region examples:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;America:&lt;/strong&gt; East US, West US, Central US, Brazil South, Canada Central, Mexico Central.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Europe:&lt;/strong&gt; North Europe, West Europe, Germany West Central, France Central, UK South, Sweden Central.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asia Pacific:&lt;/strong&gt; East Asia, Southeast Asia, Japan East, Korea Central, Australia East, Central India, Malaysia West.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Middle East &amp;amp; Africa:&lt;/strong&gt; UAE North, Qatar Central, South Africa North.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="availability-zones"&gt;Availability Zones&lt;/h3&gt;
+&lt;p&gt;Within a region, Availability Zones offer separate physical datacenters with their own power, cooling, and networking to protect against local failures.&lt;/p&gt;</description></item></channel></rss>
