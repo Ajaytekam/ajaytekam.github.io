@@ -8,8 +8,15 @@
     <language>en-us</language>
     <managingEditor>aktekam01@gmail.com (Ajay Tekam)</managingEditor>
     <webMaster>aktekam01@gmail.com (Ajay Tekam)</webMaster>
-    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/azure/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Cloud : Day 02 - Azure Resource Hierarchy</title>
+      <link>http://localhost:1313/posts/azure_cloud_day_02_azure_resource_hierarchy/</link>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate><author>aktekam01@gmail.com (Ajay Tekam)</author>
+      <guid>http://localhost:1313/posts/azure_cloud_day_02_azure_resource_hierarchy/</guid>
+      <description>&lt;h3 id=&#34;azure-tenant&#34;&gt;Azure Tenant&lt;/h3&gt;&#xA;&lt;p&gt;Tenant is the top-level entity in the Azure resource hierarchy. It represents your organization’s identity boundary and is managed through Microsoft Entra ID. It is a &lt;strong&gt;dedicated instance of identity and access management&lt;/strong&gt; for your organization. It Contains&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Users&lt;/li&gt;&#xA;&lt;li&gt;Groups&lt;/li&gt;&#xA;&lt;li&gt;Applications&lt;/li&gt;&#xA;&lt;li&gt;Service principals&lt;/li&gt;&#xA;&lt;li&gt;Authentication policies&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Tenants are setup like &lt;code&gt;One organization = one tenant (usually)&lt;/code&gt;, for example:&lt;/p&gt;&#xA;&lt;div class=&#34;mermaid&#34;&gt;&#xA;  &#xA;flowchart LR&#xA;A[Company: **ajayetkam.in**] --&gt; B[Azure Tenant]&#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;script type=&#34;module&#34;&gt;&#xA;  import mermaid from &#39;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs&#39;;&#xA;  mermaid.initialize({ startOnLoad: true });&#xA;&lt;/script&gt;&#xA;&#xA;&#xA;&lt;p&gt;&lt;img&#xA;  src=&#34;http://localhost:1313/images/azure_cloud_day_1_to_20_series/azure_cloud_02_1.png&#34;&#xA;  alt=&#34;Azure Resource Hierarchy&#34;&#xA;  loading=&#34;lazy&#34;&#xA;  decoding=&#34;async&#34;&#xA;  class=&#34;full-width&#34;&#xA;/&gt;&#xA;&#xA;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Azure Cloud : Day 01 - Azure global Infrastructure</title>
       <link>http://localhost:1313/posts/azure_cloud_day_01_gloabl_infrastructure/</link>
