@@ -31,18 +31,6 @@ category = "categories"
     weight = 2
 
     [[menu.main]]
-    identifier = "courses"
-    name = "Courses"
-    url = "/courses/"
-    weight = 3
-
-    [[menu.main]]
-    identifier = "hireme"
-    name = "Hire Me"
-    url = "/hire-me/"
-    weight = 4
-
-    [[menu.main]]
     name = "Categories"
     url = "/categories/"
     weight = 5
