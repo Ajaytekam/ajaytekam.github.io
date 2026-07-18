@@ -8,6 +8,7 @@ This is <b>Ajay</b>, i am working as a Cloud Engineer and having experience with
 - 📺 Youtube : https://www.youtube.com/@ajaytekam9
 - 💼 Linkedin : https://linkedin.com/in/ajaykt1
 - 📬 Email : ajaytekam02[at]gmail[dot]com
+- ✖️ Twitter : https://x.com/ajay_tekam01
 
 Thanks in advance
 
