@@ -46,7 +46,7 @@ draft: false
 		- Project: `eng-prod` → Resource: `VM instance`
 		- Project: `finance-prod` → Resource: `BigQuery dataset`
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
     A[Organization: company.com] --> B[Folder: Finance]
     A --> C[Folder: Engineering]
@@ -61,7 +61,7 @@ flowchart TD
     E --> I[Resource: Cloud SQL]
     F --> J[Resource: GKE cluster]
     G --> K[Resource: VM instance]
-```
+{{< /mermaid >}}
 
  Task:  
     - Create User 

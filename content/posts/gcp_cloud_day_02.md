@@ -113,7 +113,7 @@ Roles = Collection of permissions.
 
 ### IAM / Policy inheritance (Org → Folder → Project → Resource)
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
   %% Structure
   A[Organization: company.com]
@@ -158,7 +158,7 @@ flowchart TD
 
   classDef note fill:#f9f,stroke:#333,stroke-width:1px;
   class N1,N2,N3,N4 note
-```
+{{< /mermaid >}}
 
 ### GCP Identities with Scope 
 

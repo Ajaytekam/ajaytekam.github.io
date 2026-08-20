@@ -17,13 +17,13 @@ GCP provides a distributed, software-defined firewall system implemented at the 
 
 GCP has evolved from legacy VPC firewall rules to a unified **Hierarchical Firewall Policy** model:
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
     Org[Organization Firewall Policy] -->|Inherited down| Folder[Folder Firewall Policy]
     Folder -->|Inherited down| GlobalFP[Global / Regional Network Firewall Policy]
     GlobalFP -->|Applied to VPC| VPC[VPC Firewall Rules - Legacy]
     VPC --> VM[Compute Engine / GKE Nodes]
-```
+{{< /mermaid >}}
 
 | Firewall Policy Level | Scope | Managed By | Use Case |
 | :--- | :--- | :--- | :--- |
@@ -39,7 +39,7 @@ flowchart TD
 
 In GCP, security grouping and micro-segmentation are achieved through three primary mechanisms:
 
-```mermaid
+{{< mermaid >}}
 flowchart LR
     subgraph Network_Tags["Network Tags (Strings)"]
         T1[web-server] --> T2[Easy to set, but project-scoped & no IAM controls]
@@ -50,7 +50,7 @@ flowchart LR
     subgraph Secure_Tags["Secure Tags (Resource Manager)"]
         ST1[env: prod] --> ST2[Org-level governance, fine-grained RBAC]
     end
-```
+{{< /mermaid >}}
 
 | Feature | Network Tags | Service Accounts | Secure Tags (Resource Manager) |
 | :--- | :--- | :--- | :--- |
@@ -68,7 +68,7 @@ flowchart LR
 
 GCP VPC routing is global, distributed, and software-defined.
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
     Packet[Incoming / Outgoing Packet] --> LPM[1. Longest Prefix Match - Most Specific CIDR wins]
     LPM --> Priority[2. Priority - Lower value = Higher precedence]
@@ -77,7 +77,7 @@ flowchart TD
     RouteType --> Subnet[Subnet Route - Cannot be overridden]
     RouteType --> Dynamic[Dynamic / BGP Route]
     RouteType --> Static[Custom Static Route]
-```
+{{< /mermaid >}}
 
 ### 2.1 Types of Routes
 
@@ -99,7 +99,7 @@ flowchart TD
 
 Allows VM instances that **only have private internal IP addresses** (no external/public IP) to securely access Google APIs and Services (e.g., Cloud Storage, BigQuery, Secret Manager) without crossing the public internet.
 
-```mermaid
+{{< mermaid >}}
 sequenceDiagram
     autonumber
     participant VM as Private VM (10.0.1.5 - No Public IP)
@@ -111,7 +111,7 @@ sequenceDiagram
     VPC->>DNS: Resolve DNS (returns VIP: 199.36.153.8/30)
     DNS-->>VPC: Private Route via Andromeda Hypervisor
     VPC->>API: Secure internal access to Google API
-```
+{{< /mermaid >}}
 
 ### 3.1 PGA Requirements & DNS Endpoints
 
@@ -131,7 +131,7 @@ sequenceDiagram
 
 Cloud NAT is a managed, software-defined, distributed NAT solution. It does **not** rely on proxy VMs or single points of failure.
 
-```mermaid
+{{< mermaid >}}
 flowchart LR
     subgraph Private_VPC["Private Subnet (No External IPs)"]
         VM1["VM 1 (10.0.1.2)"]
@@ -150,7 +150,7 @@ flowchart LR
     VM2 -->|Outbound Egress Only| NAT
     NAT -->|Translates to NAT Public IP| ExtAPI
     ExtAPI -.->|Direct Inbound Denied| NAT
-```
+{{< /mermaid >}}
 
 ### 4.1 Cloud NAT Flavors
 
@@ -171,7 +171,7 @@ flowchart LR
 
 When connecting VPCs to Managed Services (Cloud SQL, Memorystore, Vertex AI, or Third-Party SaaS), Google provides two main technologies:
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
     subgraph PSA_Model["1. Private Services Access (PSA) - Peering Based"]
         VPC1["Consumer VPC"] <-->|VPC Network Peering| ProducerVPC["Google Managed Service VPC"]
@@ -183,7 +183,7 @@ flowchart TD
         PSC_EP -.->|Unidirectional NAT Encapsulation| ProducerService["Service Producer Project"]
         Note2["No IP overlap issues. No VPC Peering limits. Granular RBAC."]
     end
-```
+{{< /mermaid >}}
 
 ### 5.1 Detailed Comparison: PGA vs PSA vs PSC
 
@@ -202,7 +202,7 @@ flowchart TD
 
 Cloud VPN securely connects your on-premises network or other cloud providers (AWS, Azure) to your GCP VPC via an IPsec VPN tunnel.
 
-```mermaid
+{{< mermaid >}}
 flowchart LR
     subgraph GCP["Google Cloud Platform"]
         CR["Cloud Router (BGP ASN 65001)"]
@@ -219,7 +219,7 @@ flowchart LR
 
     GW0 <-->|IPsec + BGP| Peer0
     GW1 <-->|IPsec + BGP| Peer1
-```
+{{< /mermaid >}}
 
 ### 6.1 Classic VPN vs HA VPN
 
@@ -240,7 +240,7 @@ flowchart LR
 
 For high-bandwidth, mission-critical enterprise workloads, Cloud Interconnect provides enterprise-grade, low-latency, private physical connections that bypass the public internet entirely.
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
     subgraph GCP_DC["Google Cloud Global Edge"]
         VPC["Customer VPC"]
@@ -264,7 +264,7 @@ flowchart TD
         DED1 <-->|Cross Connect 10G/100G| CustRouter1
         DED2 <-->|Cross Connect 10G/100G| CustRouter2
     end
-```
+{{< /mermaid >}}
 
 ### 7.1 Interconnect Options Comparison
 
@@ -287,7 +287,7 @@ flowchart TD
 
 For regulated industries (Banking, Healthcare, Defense), all East-West (Spoke-to-Spoke) and North-South (Internet Ingress/Egress) traffic must pass through centralized firewall appliances (Palo Alto, Fortinet, Check Point).
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
     subgraph Spoke1["Spoke 1: Prod App VPC"]
         AppVM["App Workload (10.10.1.0/24)"]
@@ -307,13 +307,13 @@ flowchart TD
     AppVM -->|Route: Next Hop ILB| ILB_Untrust
     NGFW1 -->|Deep Packet Inspection| AnalyticsVM
     NGFW1 -->|Inspected Outbound| CloudNAT[Cloud NAT / Internet Egress]
-```
+{{< /mermaid >}}
 
 ### Pattern 2: Shared VPC vs VPC Network Peering vs Network Connectivity Center (NCC)
 
 Enterprise multi-project design options:
 
-```mermaid
+{{< mermaid >}}
 flowchart LR
     subgraph Shared_VPC["Pattern A: Shared VPC"]
         HostProj["Host Project: Central Network Team"]
@@ -332,7 +332,7 @@ flowchart LR
         SpokeIC["Interconnect Spoke"] --- NCCHub
         SpokeVPC["VPC Spoke"] --- NCCHub
     end
-```
+{{< /mermaid >}}
 
 | Dimension | Shared VPC | VPC Network Peering | Network Connectivity Center (NCC) |
 | :--- | :--- | :--- | :--- |
@@ -347,7 +347,7 @@ flowchart LR
 
 Enterprise DNS requires bidirectional resolution between on-premises Active Directory / BIND DNS and GCP Cloud DNS.
 
-```mermaid
+{{< mermaid >}}
 flowchart LR
     subgraph GCP_VPC["GCP VPC"]
         VM["GCP Workload (app.gcp.internal)"]
@@ -372,7 +372,7 @@ flowchart LR
 
     OutboundFWD -->|Forward queries for *.corp.local| Pipe --> AD_DNS
     AD_DNS -->|Forward queries for *.gcp.internal| Pipe --> InboundFP
-```
+{{< /mermaid >}}
 
 - **Inbound DNS Query Flow (On-Prem $\to$ GCP):** Create an Inbound Server Policy in Cloud DNS. GCP provides a private entry point IP in the VPC. On-prem DNS server forwards `*.gcp.internal` queries to this IP.
 - **Outbound DNS Query Flow (GCP $\to$ On-Prem):** Create a DNS Forwarding Zone in Cloud DNS for `*.corp.local`. Point destination to on-premises DNS server IPs (`172.16.1.10`).
