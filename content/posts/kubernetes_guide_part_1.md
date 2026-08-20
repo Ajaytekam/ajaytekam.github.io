@@ -32,6 +32,7 @@ draft: false
     - [Declarative](#declarative)  
     - [Imperative Workflow](#imperative-worflow)  
     - [Comparison](#Comparison)  
+- [Interview Questions](#interview-questions)  
 
 ## Hands On 
 
@@ -586,7 +587,7 @@ Each command performs a specific action immediately.
 
 ## Interview Questions   
 
-- Explain Kubernetes architecture.]()   
+- [Explain Kubernetes architecture.](#culster-components)     
 - What happens when you run kubectl apply ?
 
 > When I run `kubectl apply -f deployment.yaml`, `kubectl` reads the YAML file and sends it as an API request to the Kubernetes API Server. The API Server authenticates and authorizes the request, validates the resource, and runs admission controllers. If the request is valid, it stores the desired state in `etcd`. The Deployment Controller detects the new Deployment and creates or updates a ReplicaSet. The ReplicaSet ensures the required number of Pods exist. The Scheduler assigns unscheduled Pods to suitable worker nodes. The kubelet on the selected worker node receives the Pod assignment from the API Server and instructs the container runtime (such as `containerd`) to start the containers. Once the containers are running and pass their health checks, the Pod status is updated to Running in the API Server. 
