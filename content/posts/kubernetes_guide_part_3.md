@@ -1,8 +1,8 @@
 ---
-title: "Kubernetes Part 3 : Networking and Service Discovery 
+title: "Kubernetes Part 3 : Networking and Service Discovery"
 date: 2026-08-10
 categories: ["kubernetes", "cloud", "infrastructure"]
-draft: true
+draft: false
 ---
 
 ## Topics 

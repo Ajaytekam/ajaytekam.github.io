@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes Part 2 : Workloads and Application Deployment
+title: "Kubernetes Part 2 : Workloads and Application Deployment"
 date: 2026-08-10
 categories: ["kubernetes", "cloud", "infrastructure"]
 draft: false
