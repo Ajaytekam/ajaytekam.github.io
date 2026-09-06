@@ -45,7 +45,7 @@ flowchart LR
         T1[web-server] --> T2[Easy to set, but project-scoped & no IAM controls]
     end
     subgraph Service_Accounts["Service Accounts (Identities)"]
-        S1[sa-backend@...] --> S2[IAM-controlled, secure micro-segmentation]
+        S1["sa-backend@..."] --> S2[IAM-controlled, secure micro-segmentation]
     end
     subgraph Secure_Tags["Secure Tags (Resource Manager)"]
         ST1[env: prod] --> ST2[Org-level governance, fine-grained RBAC]

@@ -57,14 +57,14 @@ A Pod is the smallest deployable unit in Kubernetes, its a wrapper around one or
 - Can share storage volumes
 - Have the same lifecycle
 
-```mermaid
+{{< mermaid >}}
 flowchart TD
     A[K8s Cluster] --> B[Deployment]
     B --> C[ReplicaSet]    
     C --> D[POD]   
     D --> E(Container A)
     D --> F(Container B)
-``` 
+{{< /mermaid >}}
 
 ** Creating a Pod :**   
 
@@ -245,13 +245,13 @@ Normally, ReplicaSets are managed automatically by Deployments.
 
 A Deployment manages ReplicaSets, which in turn manage Pods:
 
-```mermaid
+{{< mermaid >}}
 graph TD
     D[Deployment] --> RS[ReplicaSet]
     RS --> P1[Pod 1]
     RS --> P2[Pod 2]
     RS --> P3[Pod 3]
-```  
+{{< /mermaid >}}
 
 - Deployment: Controls updates, rollouts, version history, and scaling strategy.
 - ReplicaSet: Ensures the exact specified number of Pod replicas are running at any given time.
@@ -315,7 +315,7 @@ A Rolling Update is the default deployment strategy in Kubernetes. It updates Po
 3. Termination: Old Pods are gradually terminated.
 4. Repeat: This cycle repeats until all Pods are running the updated version.
 
-```mermaid   
+{{< mermaid >}}
 graph LR
 subgraph "State 3: Complete"
     v2_1[Pod v2 ✨]
@@ -332,7 +332,7 @@ subgraph "State 1: Initial"
     v1_2[Pod v1]
     v1_3[Pod v1]
 end
-```  
+{{< /mermaid >}}
 
 **Key Configuration Parameters :**   
 
@@ -401,7 +401,7 @@ In Kubernetes, Recreate is the second built-in Deployment strategy (alongside Ro
 2. Downtime Window: There is a brief period where no Pods exist and the application is unavailable.
 3. Startup: New Pods (Version 2) are created and initialized at the same time.
 
-```mermaid  
+{{< mermaid >}}
 graph TD
 subgraph "Phase 3: Starting (v2)"
     C1[Pod v2 ✨]
@@ -415,10 +415,11 @@ subgraph "Phase 1: Running (v1)"
     A1[Pod v1]
     A2[Pod v1]
 end
-``` 
+{{< /mermaid >}}
+
 **Example Configuration reload :**  
 
-```mermaid  
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
